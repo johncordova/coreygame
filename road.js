@@ -5,7 +5,7 @@ class Road{
         this.laneCount = laneCount;
         this.left = x - width/2;
         this.right = x + width/2;
-        
+
         const infinity = 10000;
         this.top = infinity;
         this.bottom = -infinity;
@@ -14,6 +14,7 @@ class Road{
     draw(ctx){
         ctx.linewidth = 5;
         ctx.strokestyle = "white";
+
         ctx.beginPath();
         ctx.moveTo(this.left, this.top);
         ctx.lineTo(this.left, this.bottom);
