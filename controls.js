@@ -10,7 +10,7 @@ class Controls{
     }
 
     #addKeyboardListeners(){
-        document.onkeydown(ev)=>{
+        document.onkeydown=(ev)=>{
             switch(ev.key){
                 case "ArrowLeft":
                     this.left=true;
@@ -26,9 +26,8 @@ class Controls{
                     break;
             }
             console.table(this);
-            
         }
-        document.onkeyup(ev)=>
+        document.onkeyup=(ev)=>{
             switch(ev.key){
                 case "ArrowLeft":
                     this.left=false;
@@ -43,5 +42,7 @@ class Controls{
                     this.reverse=false;
                     break;
             }
+        }
+        
     }
 }
