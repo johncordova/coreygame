@@ -13,14 +13,22 @@ class Road{
 
     draw(ctx){
         ctx.linewidth = 5;
-        ctx.strokestyle = "white";
+        ctx.strokestyle="white";
+        // This is where we draw all the lanes
         for (let i=0;i<=this.laneCount;i++){
+            // We have defined a linear interpolation method in util.js
             const x=lerp(
                 this.left,
                 this.right,
                 i/this.laneCount
             );
-            
+            // This is where we draw the inside lanes
+            if (i>0 && i<this.laneCount){
+                ctx.setLineDash([20,20]);
+            }
+            else {
+                ctx.setLineDash[]
+            }
             ctx.beginPath();
             ctx.moveTo(x, this.top);
             ctx.lineTo(x, this.bottom);
