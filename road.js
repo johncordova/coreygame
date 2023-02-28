@@ -36,25 +36,15 @@ class Road{
                 i/this.laneCount
             );
             // This is where we draw the inside lanes
-            if (i>0 && i<this.laneCount){
-                ctx.setLineDash([20,20]);
-            }
-            else {
-                ctx.setLineDash([]);
-            }
+            ctx.setLineDash([20,20]);
             ctx.beginPath();
             ctx.moveTo(x, this.top);
             ctx.lineTo(x, this.bottom);
             ctx.stroke();
         }
-    this.borders.forEach{border=>(
-        ctx.beginPath();
-        ctx.moveTo(border[0].x,border[0].y);
-        ctx.lineTo(border[1].x,border[1].y);
-        ctx.stroke();
-        );
+
     }
 }
 
-}
+
 
