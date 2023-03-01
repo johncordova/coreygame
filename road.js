@@ -9,11 +9,18 @@ class Road{
         const infinity=10000;
         this.top=-infinity;
         this.bottom=infinity;
-
         const topLeft={x:this.left, y:this.top};
         const bottomLeft={x:this.left, y:this.bottom};
         const topRight={x:this.right, y:this.top};
         const bottomRight={x:this.right, y:this.bottom};
+        this.borders=[
+            [topLeft],[topRight]
+        ];
+        for (let y = -1000;y<0;y++){
+            const x=Math.sin(y*0.1)*50;
+            this.borders[0].push({x:x+this.left,y:y});
+            this.borders[1].push({x:x+this.right,y:y});
+        }
 
     }
 
@@ -35,13 +42,22 @@ class Road{
                 this.right,
                 i/this.laneCount
             );
-            // This is where we draw the inside lanes
-            ctx.setLineDash([20,20]);
+            if(i>0 && i<this.laneCount){
+                // This is where we draw the inside lanes
+                ctx.setLineDash([20,20]);
+            }
             ctx.beginPath();
             ctx.moveTo(x, this.top);
             ctx.lineTo(x, this.bottom);
             ctx.stroke();
         }
+
+        this.borders.forEach(border=>{
+            ctx.beginPath();
+            ctx.moveTo(border[0].x, border[0].y);
+            ctx.lineTo(border[1].x, border[1].y);
+            ctx.stroke();
+        });
 
     }
 }

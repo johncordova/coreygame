@@ -12,11 +12,14 @@ function animate(){
     ctx.save();
     //
     myCanvas.height=window.innerHeight;
-        // Have the camera follow the car
-        ctx.translate(0,-car.y+myCanvas.height*0.7);
+    // Have the camera follow the car
+    ctx.translate(0,-car.y+myCanvas.height*0.7);
     car.update();
+    // Draw the road
     road.draw(ctx)
+    // Draw the car on the road
     car.draw(ctx);
     ctx.restore();
+    
     requestAnimationFrame(animate);
 }

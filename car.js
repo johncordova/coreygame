@@ -51,7 +51,7 @@ class Car {
         // This drives the car forward relative to the center
         // Defined according to the unit circle
         this.x-=Math.sin(this.angle)*this.speed;
-        this.y-=Math.cos(this.angle)*this.speed;
+        this.y+=Math.cos(this.angle)*this.speed;
         
     }
 
