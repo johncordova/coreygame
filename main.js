@@ -9,7 +9,7 @@ animate();
 
 function animate(){
     // This clears the canvas each frame.
-    ctx.save();
+    //ctx.save();
     //
     myCanvas.height=window.innerHeight;
     // Have the camera follow the car
@@ -19,7 +19,7 @@ function animate(){
     road.draw(ctx)
     // Draw the car on the road
     car.draw(ctx);
-    ctx.restore();
-    
+    //ctx.restore();
+
     requestAnimationFrame(animate);
 }
