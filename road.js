@@ -13,6 +13,7 @@ class Road{
         const bottomLeft={x:this.left, y:this.bottom};
         const topRight={x:this.right, y:this.top};
         const bottomRight={x:this.right, y:this.bottom};
+
         this.borders=[
             [topLeft],[topRight]
         ];
@@ -33,7 +34,7 @@ class Road{
 
     draw(ctx){
         ctx.linewidth = 5;
-        ctx.strokeStyle="yellow";
+        v
         // This is where we draw all the lanes
         for (let i=1;i<=this.laneCount-1;i++){
             // We have defined a linear interpolation method in util.js
@@ -51,7 +52,7 @@ class Road{
             ctx.lineTo(x, this.bottom);
             ctx.stroke();
         }
-
+        ctx.setLineDash([]);
         this.borders.forEach(border=>{
             ctx.beginPath();
             ctx.moveTo(border[0].x, border[0].y);
