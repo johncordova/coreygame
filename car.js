@@ -57,7 +57,6 @@ class Car {
 
     draw (ctx)
     {
-
         ctx.save();
         ctx.translate(this.x,this.y);
         ctx.rotate(-this.angle);
